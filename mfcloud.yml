@@ -1,0 +1,26 @@
+
+mysql:
+    image: mysql
+    env:
+        MYSQL_ROOT_PASSWORD: '123123'
+    volumes:
+        .mfcloud/mysql/my.cnf: /etc/my.cnf
+#        /home/mfcloud/.mysql: /var/lib/mysql
+
+postfix:
+    image: previousnext/postfix
+
+php:
+    image: cravler/php5-fpm
+    env:
+        PHP5_DATE_TIMEZONE: 'Europe/Tallinn'
+    volumes:
+        .: /var/www
+#        /home/mfcloud/.composer: /.composer
+    cmd: ./run.sh
+
+nginx:
+    image: nginx
+    volumes:
+        .: /var/www
+        .mfcloud/nginx/nginx.conf: /etc/nginx.conf
