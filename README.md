@@ -1,19 +1,19 @@
-# Mfcloud Symfony 2
+# MCloud - Symfony 2
 
 ## Installation
 
-### Step 1: Install [Mfcloud](http://mfcloud.readthedocs.org)
+### Step 1: Install [MCloud](http://cloud.modera.org)
 
-### Step2: Init app
+### Step 2: Init app
 
 ``` bash
-mfcloud init symfony [path_to_mfcloud_symfony]
+mcloud init symfony [path_to_mcloud_symfony]
 ```
 
-### Step3: Start app
+### Step 3: Start app
 
 ``` bash
-mfcloud start symfony
+mcloud start symfony
 ```
 
 ## License
