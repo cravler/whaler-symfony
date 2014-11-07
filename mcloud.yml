@@ -1,6 +1,6 @@
 
 mysql:
-    image: mysql
+    image: mysql:5
     env:
         MYSQL_ROOT_PASSWORD: '123123'
     volumes:
@@ -11,6 +11,7 @@ postfix:
     image: previousnext/postfix
 
 php:
+    wait: 1800
     image: cravler/php5-fpm
     env:
         PHP5_DATE_TIMEZONE: 'Europe/Tallinn'
@@ -20,7 +21,8 @@ php:
     cmd: .mcloud/php/run.sh
 
 nginx:
-    image: nginx
+    image: nginx:1.7.7
     volumes:
         .: /var/www
-        .mcloud/nginx/nginx.conf: /etc/nginx.conf
+        .mcloud/nginx/nginx.conf: /etc/nginx/nginx.conf
+    cmd: nginx
