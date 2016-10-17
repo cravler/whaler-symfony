@@ -1,31 +1,31 @@
-# MCloud - Symfony 2
+# Whaler - Symfony 3
 
 ## Installation
 
-### Step 1: Install [MCloud](https://mcloud.io)
+### Step 1: Install [Whaler](https://github.com/whaler/whaler)
 
-### Step 2: Add [GitHub personal access token](https://github.com/settings/applications) (optional)
+### Step 2: Install [Whaler haproxy plugin](https://github.com/whaler/whaler-haproxy-plugin)
 
-``` bash
-mcloud set COMPOSER_GITHUB_OAUTH YOUR-TOKEN-HASH-GOES-HERE
-```
-
-### Step 3: Init app
+### Step 3: Add [GitHub personal access token](https://github.com/settings/tokens) (optional)
 
 ``` bash
-mcloud init symfony [path_to_mcloud_symfony]
+whaler vars:set COMPOSER_GITHUB_OAUTH YOUR-TOKEN-HASH-GOES-HERE
 ```
 
 ### Step 4: Start app
 
+Go to directory where you cloned this repository and execute these command:
+
 ``` bash
-mcloud start symfony
+whaler start --init
 ```
 
-### Step 5: Show status
+### Step 5: Open page
 
-``` bash
-mcloud status symfony
+Instead of "<app>" write current dir name.
+
+```
+<app>.whaler.lh
 ```
 
 ## License
