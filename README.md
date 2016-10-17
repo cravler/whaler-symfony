@@ -22,7 +22,7 @@ whaler start --init
 
 ### Step 5: Open page
 
-Instead of "<app>" write current dir name.
+Instead of `<app>` write current dir name.
 
 ```
 <app>.whaler.lh
