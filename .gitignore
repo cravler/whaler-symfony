@@ -1,2 +1,7 @@
-/.idea/
-/sf/
+/.dist/.volumes
+/.env.local
+/.idea
+/app
+.#*
+\#*
+*~

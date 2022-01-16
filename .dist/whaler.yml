@@ -1,0 +1,14 @@
+services:
+    php:
+        image: ${REPOSITORY}-php:${TAG}
+        volumes:
+            .secrets/app/.env: /usr/src/app/.env.local
+            .volumes/app/var: /usr/src/app/var
+
+    nginx:
+        web: 80
+        #ssl: 8443 send-proxy
+        image: ${REPOSITORY}-nginx:${TAG}
+        volumes:
+            .secrets/nginx/conf.d: /etc/nginx/conf.d
+            #.secrets/nginx/ssl: /etc/nginx/ssl

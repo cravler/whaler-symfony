@@ -1,0 +1,3 @@
+FROM cravler/php:8-fpm
+
+COPY ./app /usr/src/app

@@ -1,28 +1,19 @@
 services:
-    mysql:
-        image: mysql:5
-        env:
-            MYSQL_ALLOW_EMPTY_PASSWORD: yes
-        volumes:
-            .whaler/mysql/my.cnf: /etc/my.cnf
-
-    postfix:
-        image: previousnext/postfix
-
     php:
-        wait: 1800s
-        image: cravler/php7-fpm
-        env:
-            PHP7_DATE_TIMEZONE: 'Europe/Tallinn'
+        wait: 1h
+        image: ${APP_NAME}_php
+        build: .docker/php
         volumes:
-            .: /var/www
-        cmd: .whaler/php/run.sh
+            /.composer: ~
+            app: /usr/src/app
+            .whaler/php/run.sh: /.php/run.sh
 
     nginx:
         web: 80
         #ssl: 8443 send-proxy
-        image: nginx:1.7.7
+        image: ${APP_NAME}_nginx
+        build: .docker/nginx
         volumes:
-            .: /var/www
-            .whaler/nginx/nginx.conf: /etc/nginx/nginx.conf
-        cmd: nginx
+            app/: /usr/src/app
+            .whaler/nginx/conf.d: /etc/nginx/conf.d
+            #.whaler/nginx/ssl: /etc/nginx/ssl

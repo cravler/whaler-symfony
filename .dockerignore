@@ -1,0 +1,10 @@
+.git
+**/.git
+**/.gitignore
+.gitmodules
+.gitignore
+/app/var
+/app/vendor/**/vendor
+/app/.env.local.php
+/app/.env.*.local
+/app/.env.local

@@ -1,31 +1,32 @@
-# Whaler - Symfony 3
+# Whaler - Symfony
 
-## Installation
+> **NB!** Firstly: [configure environment](.whaler/README.md)
 
-### Step 1: Install [Whaler](https://github.com/whaler/whaler)
+## Create project
 
-### Step 2: Install [Whaler haproxy plugin](https://github.com/whaler/whaler-haproxy-plugin)
-
-### Step 3: Add [GitHub personal access token](https://github.com/settings/tokens) (optional)
-
-``` bash
-whaler vars:set COMPOSER_GITHUB_OAUTH YOUR-TOKEN-HASH-GOES-HERE
-```
-
-### Step 4: Start app
-
-Go to directory where you cloned this repository and execute these command:
+Go to directory where you cloned this repository and execute these commands:
 
 ``` bash
 whaler start --init
+whaler run php.
+composer create-project symfony/skeleton . --prefer-dist
+exit
 ```
 
-### Step 5: Open page
-
-Instead of `<app>` write current dir name.
+Open page:
 
 ```
-<app>.whaler.lh
+http://<app>.whaler.lh
+```
+
+> **NB!** Instead of `<app>` write current dir name.
+
+## Make release
+
+```bash
+.build/make.sh --repository=symfony/app
+cd .dist
+whaler start [app_name] --init
 ```
 
 ## License
